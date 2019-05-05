@@ -105,7 +105,7 @@ Start the nginx web again and it will automatically added into haproxy LB member
 
 [vagrant@nginx-web-001 ~]$ sudo systemctl start nginx
 
-Other:
+Others:
 
 vagrant halt or vagrant halt instancename # to shutdown the all instance or one instance
   
