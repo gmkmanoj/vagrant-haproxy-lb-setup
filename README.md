@@ -82,11 +82,11 @@ Yes the three instances are up now.
 
 Now hit the haproxy URL http://10.11.11.100 now we will get response from one of the nginx server, do refresh and check the response from nginx server 2.
 
-haproxylab]# curl http://10.11.11.100/
+haproxylab]# curl http://10.11.11.100/ <br>
 Hello World<br>
 Response from : Nginx web1<br>
 
-haproxylab]# curl http://10.11.11.100/
+haproxylab]# curl http://10.11.11.100/ <br>
 Hello World<br>
 Response from : Nginx web2<br>
 
