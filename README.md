@@ -94,3 +94,12 @@ Now the Haproxy Load balancer setup completed and running in roundrobin method.
 
 You can ssh the instance and stop one of the nginx web service to verify the haproxy getting response from other server.
 
+Few commands to use in vagrant 
+
+vagrant ssh halb # to ssh haproxy server
+vagrant halt or vagrant halt <instancename> # to shutdown the all instance or one instance
+vagrant destroy or vagrant destroy <instancename> # to remove all instance or one instance
+
+Note :
+This setup only works on your local machine because the vm machine used private network settings. 
+Reach me @ gmkmanoj@gmail.com for any questions.
