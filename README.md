@@ -4,7 +4,7 @@ Creating HA-Proxy load balancer setup with roundrobin support.
 
 <h4>Getting Started</h4>
 
-These instructions will get you setup haproxy load balancer on your local machine. Here i used one haproxy server and two nginx web server
+These instructions will get you setup haproxy load balancer on your local machine with help of vagrant and virtualbox. Here i used one haproxy server and two nginx web server
 haproxy : 10.11.11.100
 nginx web1 : 10.11.11.101
 nginx web2 : 10.11.11.102
@@ -16,7 +16,7 @@ You must have administrator privileges to install the below softwares, select th
 Vagrant 2.2.4 - https://www.vagrantup.com/downloads.html
 VirtulBox 5.2 - https://www.virtualbox.org/wiki/Download_Old_Builds_5_2
 
-You need to restart after installing the vagrant
+You need to restart after installing the virtualbox and vagrant
 
 OS : Linux or Windows
 
@@ -28,7 +28,7 @@ Download the Vagrantfile and additional script files
 
 https://github.com/gmkmanoj/vagrant-haproxy-lb-setup/blob/master/haproxy-lb-setup.zip
 
-Extract the zip to newly created folder
+Extract the zip file into newly created folder
 
 Now time to bring up instance using vagrant
 
@@ -54,7 +54,7 @@ And run vagrant up
 
 haproxylab]# vagrant up
 
-Now the vagrant will create three virtualbox vm named like below and do the haproxy and nginx setup.
+Now the vagrant will download centos/7 box and create three virtualbox vm named like below and it will complete the haproxy and nginx setup.
 
 HAProxy
 NginxWeb1
@@ -95,5 +95,5 @@ haproxylab]# curl http://10.11.11.100/
 
 Now the Haproxy Load balancer setup completed and running in roundrobbin method.
 
-You can ssh the instance and stop one of the nginx web service to verify the haproxy response from other server.
+You can ssh the instance and stop one of the nginx web service to verify the haproxy getting response from other server.
 
