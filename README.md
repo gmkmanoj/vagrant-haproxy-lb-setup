@@ -1,6 +1,6 @@
 <h3>HAPROXY Load Balancer setup</h3>
 
-Creating HA-Proxy load balancer setup with roundrobin support.
+Creating HA-Proxy load balanced web server environment setup with roundrobin support.
 
 <h4>Getting Started</h4>
 
