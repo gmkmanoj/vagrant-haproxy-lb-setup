@@ -12,7 +12,7 @@ nginx web2 : 10.11.11.102<br>
 
 <h4>Prerequisites:</h4>
 
-You must have administrator privileges to install the below softwares, select the package based on your operating system 
+You must have internet connection and administrator privileges to install the below softwares, select the package based on your operating system
 
 Vagrant 2.2.4 - https://www.vagrantup.com/downloads.html<br>
 VirtulBox 5.2 - https://www.virtualbox.org/wiki/Download_Old_Builds_5_2<br>
