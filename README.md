@@ -83,14 +83,14 @@ Yes the three instances are up now.
 Now hit the haproxy URL http://10.11.11.100 now we will get response from one of the nginx server, do refresh and check the response from nginx server 2.
 
 haproxylab]# curl http://10.11.11.100/
-Hello World
-Response from : Nginx web1
+Hello World<br>
+Response from : Nginx web1<br>
 
 haproxylab]# curl http://10.11.11.100/
-Hello World
-Response from : Nginx web2
+Hello World<br>
+Response from : Nginx web2<br>
 
-Now the Haproxy Load balancer setup completed and running in roundrobbin method.
+Now the Haproxy Load balancer setup completed and running in roundrobin method.
 
 You can ssh the instance and stop one of the nginx web service to verify the haproxy getting response from other server.
 
