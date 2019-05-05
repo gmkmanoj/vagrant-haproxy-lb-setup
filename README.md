@@ -4,68 +4,96 @@ Creating HA-Proxy load balancer setup with roundrobin support.
 
 <h4>Getting Started</h4>
 
-These instructions will get you setup haproxy load balancer on your local machine
+These instructions will get you setup haproxy load balancer on your local machine. Here i used one haproxy server and two nginx web server
+haproxy : 10.11.11.100
+nginx web1 : 10.11.11.101
+nginx web2 : 10.11.11.102
 
-</h4>Prerequisites</h4>
+<h4>Prerequisites</h4>
 
-You must have administrator privileges to install the below softwares
+You must have administrator privileges to install the below softwares, select the package based on your operating system 
 
 Vagrant 2.2.4 - https://www.vagrantup.com/downloads.html
 VirtulBox 5.2 - https://www.virtualbox.org/wiki/Download_Old_Builds_5_2
 
-Installing
+You need to restart after installing the vagrant
 
-A step by step series of examples that tell you how to get a development env running
+OS : Linux or Windows
 
-Say what the step will be
+<h4>Installing</h4>
 
-Give the example
+create one folder, here i created haproxylab in /opt in my linux box
 
-And repeat
+Download the Vagrantfile and additional script files
 
-until finished
+https://github.com/gmkmanoj/vagrant-haproxy-lb-setup/blob/master/haproxy-lb-setup.zip
 
-End with an example of getting some data out of the system or using it for a little demo
-Running the tests
+Extract the zip to newly created folder
 
-Explain how to run the automated tests for this system
-Break down into end to end tests
+Now time to bring up instance using vagrant
 
-Explain what these tests test and why
+<h6>In Windows:</h6>
 
-Give an example
+Go to powershell
 
-And coding style tests
+go to the haproxy-lb-setup.zip file extracted path do ls to verify the files
 
-Explain what these tests test and why
+PS C:\Users\manoj\haproxylab> ls
 
-Give an example
+PS C:\Users\manoj\haproxylab> vagrant up
 
-Deployment
+<h6>In Linux :</h6>
 
-Add additional notes about how to deploy this on a live system
-Built With
+Open terminal and go the extract folder
+Ex : 
+# cd /opt/haproxylab
+haproxylab]# ls
+installhaproxy.sh  installnginx.sh  README.md  Vagrantfile  web1content.sh  web2content.sh
 
-    Dropwizard - The web framework used
-    Maven - Dependency Management
-    ROME - Used to generate RSS Feeds
+And run vagrant up
 
-Contributing
+haproxylab]# vagrant up
 
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-Versioning
+Now the vagrant will create three virtualbox vm named like below and do the haproxy and nginx setup.
 
-We use SemVer for versioning. For the versions available, see the tags on this repository.
-Authors
+HAProxy
+NginxWeb1
+NginxWeb2
 
-    Billie Thompson - Initial work - PurpleBooth
+After the completion of the above command please verify the vm status
 
-See also the list of contributors who participated in this project.
-License
+haproxylab]# vagrant status
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
-Acknowledgments
+Current machine states:
 
-    Hat tip to anyone whose code was used
-    Inspiration
-    etc
+halb                      running (virtualbox)
+web1                      running (virtualbox)
+web2                      running (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+
+Yes the three instances are up now.
+
+Now hit the haproxy URL http://10.11.11.100 now we will get response from one of the nginx server, do refresh and check the response from nginx server 2.
+
+haproxylab]# curl http://10.11.11.100/
+<html>
+<body>
+<h1>Hello World</h1>
+    <p>Response from : <h3>Nginx web1</h3></p>
+</body>
+</html>
+haproxylab]# curl http://10.11.11.100/
+<html>
+<body>
+<h1>Hello World</h1>
+    <p>Response from : <h3>Nginx web2</h3></p>
+</body>
+</html>
+
+Now the Haproxy Load balancer setup completed and running in roundrobbin method.
+
+You can ssh the instance and stop one of the nginx web service to verify the haproxy response from other server.
+
