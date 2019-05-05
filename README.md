@@ -107,9 +107,9 @@ Start the nginx web again and it will automatically added into haproxy LB member
 
 Other:
 
-vagrant halt or vagrant halt <instancename> # to shutdown the all instance or one instance
+vagrant halt or vagrant halt instancename # to shutdown the all instance or one instance
   
-vagrant destroy or vagrant destroy <instancename> # to remove all instance or one instance
+vagrant destroy or vagrant destroy instancename # to remove all instance or one instance
 
 Note :
 This setup only works on your local machine because the vm machine used private network settings. 
