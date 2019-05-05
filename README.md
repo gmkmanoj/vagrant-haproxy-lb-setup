@@ -101,11 +101,14 @@ vagrant ssh web1 <br>
 
 Verify the haproxy url http://10.11.11.100 response , it will give response from nginx web2
 
-Start the nginx web again and it will automatically added in LB members pool.
+Start the nginx web again and it will automatically added into haproxy LB members pool.
 
 [vagrant@nginx-web-001 ~]$ sudo systemctl start nginx
 
+Other:
+
 vagrant halt or vagrant halt <instancename> # to shutdown the all instance or one instance
+  
 vagrant destroy or vagrant destroy <instancename> # to remove all instance or one instance
 
 Note :
